@@ -1,0 +1,329 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,8pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Rakshith G} \\ \vspace{1pt}
+    Machine Learning Software Development Engineer \\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\  \underline{+91 9731429857} ~ \href{mailto:rakshithg2098@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{rakshithg2098@gmail.com}} ~
+    \href{https://www.linkedin.com/in/rakshithg98/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/rakshithg98}}  ~
+    \href{https://github.com/rakshithGGowda}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/rakshithGGowda}}
+    \vspace{-2pt}
+\end{center}
+
+
+%-----------PROFESSIONAL SUMMARY-----------
+\section{Professional Summary}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+      ML Engineer with 3 years at Mercedes-Benz R\&D, specializing in generative AI, Vision-Language models, and end-to-end MLOps. Key contributions include a patent-pending 3D MeshGAN, Automated AGV Robotic Warehouse, Package Space Optimization.
+    }}
+  \end{itemize}
+  \vspace{-16pt}
+
+
+%-----------SKILLS-----------
+\section{Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}]
+    \footnotesize{\item{
+      \setlength{\itemsep}{5pt}
+      \textbf{Languages}{: Python, JavaScript, C++} \\[5pt]
+      \textbf{Deep Learning}{: PyTorch, TensorFlow, Keras, Scikit-learn, Hugging Face Ecosystem} \\[5pt]
+      \textbf{Computer Vision}{: Multimodal Vision-Language Models, Object Detection, Pose Estimation, GANs (C-GANs), MeshGAN} \\[4pt]
+      \textbf{Natural Language Processing:}{: LLM Fine-Tuning, RAG Systems, Auto-Encoders, Transformers, Tokenization, Agentic Workflows} \\[5pt]
+      \textbf{Backend and MLOps}{: Docker, Docker-Compose, FastAPI, Flask, GCP, AWS, MLflow, GitHub Actions} \\[5pt]
+      \textbf{Data Visualization}{: Matplotlib, Seaborn, Plotly, TensorBoard, Tableau} \\[5pt]
+      \textbf{Cloud Technologies:}{: AWS, Google Cloud Platform, Firebase, Hugging Face Spaces} \\[5pt]
+      \textbf{Tools and Workflow:}{: REST APIs, SQLAlchemy, Streamlit, Linux, Agile/Scrum} \\
+    }}
+  \end{itemize}
+  \vspace{-16pt}
+
+    \vspace{5pt}
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Mercedes-Benz Research and Development India}{2 Years}
+      {Machine Learning Engineer}{Oct 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{Architected the \textbf{Process Code tracking system} (27 codes across 3 customers) with DB migrations, FK constraints, and rule-engine integration — enabling full traceability of forklift placement decisions across 10+ business rules.}
+        \resumeItem{Built a \textbf{Spatial Optimiser} algorithm that minimises AGV forklift movements by exchanging items between impure stacking towers, reducing unnecessary warehouse traversals for robotic operations.}
+        \resumeItem{Developed \textbf{Post-Simulation position optimisation} for short towers on Pre-Stacking Areas, combining and repositioning items to maximise container space utilisation for autonomous forklift placement.}
+        \resumeItem{Implemented \textbf{Machine Vision integration} pipeline processing real-time 3D dimension measurements from cameras, updating item dimensions with comparison history and triggering re-stacking logic.}
+        \resumeItem{Designed \textbf{PHI UI E2E automation framework} using Playwright to simulate forklift driver workflows (login, scan, placement) — replacing manual testing of the distributed microservices system.}
+        \resumeItem{Contributed to \textbf{Randomised Greedy 3D bin-packing solver} with multiple RS/sorting strategies, population-based optimisation, and rotation handling for containerised freight loading.}
+        \\
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Publicis Sapient}{1.8 Years}
+      {Software Development Engineer L1}{Jan 2021 -- Nov 2021}
+      \resumeItemListStart
+        \resumeItem{Enhanced Web UI for Automotive Company Improved page speed by 30\%, and increased customer retention by 10\%.}
+        \resumeItem{Implemented Real-Time Features Introduced online booking for test drives, home delivery, owner services.}
+        \resumeItem{Agile Development and Cross-Skills Achievement: Leveraged Agile methodology and advanced analytics for improved user experience; recognized for participation in the Cross Skills Program and embodying core company values.}
+        \\
+      \resumeItemListEnd
+    \vspace{-15pt}
+    \resumeSubheading
+        {}{}
+        {Quality Engineer L1}{Jun 2020 - Jan 2021}
+        \resumeItemListStart
+        \resumeItem{Conducted UI web automation testing for a in the Automotive Industry, utilizing the Watir (Ruby) library in Blunder and associating with CICD (Continuous Integration and Continuous Deployment) using Jenkins }
+        \resumeItem{Performed Cross-browser and Responsive devices UI/UX testing using BrowserStack.}
+        \resumeItem{Worked on CMS tool: Adobe Experience Manager (AEM) for authoring and testing purposes.}
+        % \resumeItem{Conducted API testing using Postman.}
+        \\
+         \resumeItemListEnd
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+\vspace{5pt}
+%-----------PROJECTS-----------
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+         \resumeProjectHeading
+            {\textbf{Real-Time Indian Sign Language Classification using LSTM} $|$ \emph{Machine Learning}}{Mar 2023}
+          \resumeItemListStart
+        \resumeItem{Curated 3000 ISL gesture videos using MediaPipe Holistic for "Help me," "Call police," and "Thank you."}
+        \resumeItem{Engineered a preprocessing pipeline, normalizing keypoints and segmenting features.}
+        \resumeItem{Designed a three-layer LSTM model for precise ISL gesture recognition, achieving 92.5\% accuracy.}
+          \resumeItemListEnd
+          \vspace{-17pt}
+            \resumeProjectHeading
+                {\textbf{Automated Real-Time Accident Detection System } $|$ \emph{Computer Vision}}{In Progress}
+          \resumeItemListStart
+            \resumeItem{Created a realtime accident detection system with computer vision, YoloV7 Transfer Learning, RAFT for Optical Flow.}
+            \resumeItem{Envisioned to enhance road safety by reducing emergency response times and improving resource allocation.}
+            \resumeItem{Implementing innovative technologies to identify vehicles, pedestrians, and road elements in live video and trigger alerts.}
+          \resumeItemListEnd
+          \vspace{-10pt}
+          % \resumeProjectHeading
+          % {\textbf{Image Denoising using Autoencoders} $|$ \emph{Deep Learning}}{February 2023}
+          % \resumeItemListStart
+          %   % \resumeItem{Executed an academic project on image denoising with autoencoders, leveraging deep learning principles.}
+          %   \resumeItem{Developed a robust autoencoder architecture, integrating encoder and decoder components for noise reduction.}
+          %   \resumeItem{Engineered a specialized dataset containing clean and noisy images, crucial for training the autoencoder effectively.}
+          %   % \resumeItem{Applied a loss function to refine the autoencoder's training process, enhancing its noise reduction capabilities.}
+          %   \resumeItem{Translated theoretical concepts into practical implementation using TensorFlow and Keras, showcasing the complete workflow of creating, training, and utilizing the autoencoder for image denoising.}
+          % \resumeItemListEnd
+
+           \vspace{35pt}
+            \resumeProjectHeading
+          {\textbf{Satellite Image to Maps Translation using pix2pix GAN} $|$ \emph{Computer Vision}}{Nov 2022}
+          \resumeItemListStart
+            \resumeItem{Implemented pix2pix GAN with U-Net generator for satellite image to maps translation.}
+            \resumeItem{Utilized conditional adversarial network follows Image-to-Image Translation with Conditional Adversarial Networks.}
+            \resumeItem{Led innovative image translation with learned mappings, marking a paradigm shift in automation.}
+          \resumeItemListEnd
+          \vspace{-20pt}
+            \resumeProjectHeading
+          {\textbf{Deep Learning for Age Estimation using Facial Images} $|$ \emph{ACIT Conference 2020 | IACIT-20-600}}{Jan 2020}
+          \resumeItemListStart
+            % \resumeItem{Addressed the critical role of age identification in user verification for applications and websites age-restricted content.}
+            \resumeItem{Employed Deep Convolutional Neural Networks to enhance age and gender prediction, surpasses traditional algorithms.}
+            \resumeItem{Built a TensorFlow Lite model for age prediction, integrated into an Android app to regulate child internet access.}
+            % \resumeItem{Leveraged a vast dataset of 500,000+ face images from IMDB and WIKI databases to surpass existing limitations.}
+            \resumeItem{Published a scientific paper at ACIT 2020 (Paper ID: IACIT-20-600), showcasing project research and contributions.}
+          \resumeItemListEnd
+          \vspace{-20pt}
+               \resumeProjectHeading
+            {\textbf{Responsive Movie Information Website} $|$ \emph{JavaScript, CSS, HTML - \href{https://movies-info12.netlify.app/}{\underline{View Website}} \href{https://github.com/rakshithGGowda/web-dev-movies}{\underline{GitHub Code}}}}{Dec 2020}
+          \resumeItemListStart
+            \resumeItem{Designed responsive Movie Information website with Popular and Upcoming movie sections.}
+            \resumeItem{Used Vanilla JavaScript for dynamic UI and smooth animations, improving user experience.}
+            \resumeItem{Integrated front-end with back-end API links for seamless movie detail display.}
+          \resumeItemListEnd
+          \vspace{-20pt}
+          \resumeProjectHeading
+          {\textbf{E-commerce Website Development} $|$ \emph{ReactJs JavaScript, CSS, HTML - \href{https://computersry.netlify.app/}{\underline{View Website}} \href{https://github.com/rakshithGGowda/Computersry}{\underline{GitHub Code}}}}{Sep 2021}
+          \resumeItemListStart
+            \resumeItem{Developed a End-to-End E-commerce platform using ReactJS Libraries, featuring modern design and animations.}
+            \resumeItem{Enabled on-the-go product management via Sanity and achieved complete Stripe integration for real payments.}
+            \resumeItem{advanced cart, checkout functionalities, and enriched user experience through interactive design.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Programming Languages}{: Python, JavaScript,TypeScript, C, HTML/CSS, SQL} \\
+     \textbf{Developer Tools}{: VS Code, Git, GitHub/GitLab/Bitbucket, AnaConda, LATEX} \\
+     \textbf{Technologies/Frameworks}{: ReactJs, Numpy, Scikit-Learn, PyTorch, TensorFlow } \\
+    }}
+ \end{itemize}
+
+
+%-----------INVOLVEMENT---------------
+\section{Leadership/Extracurricular}
+    \resumeSubHeadingListStart
+        \resumeSubheading{National Institute of Technology Karnataka}{Spring 2023 -- Present}{Placement Coordinator}{}
+            \resumeItemListStart
+                \resumeItem{Leading career placements, forging strong industry alliances as NITK's Placement Coordinator.}
+                \resumeItem{Strengthened networking prospects by engaging alumni, fostering mentorship to promote impactful talent growth.}
+                \resumeItem{Provided personalized guidance, organized events, and managed databases to boost student support and industry colab.    }
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    \resumeSubHeadingListStart
+        \resumeSubheading{}{}{Internship Coordinator}{Aug 2022 - May 2023}
+            \resumeItemListStart
+                \resumeItem{Internship Program Lead: Designed and managed transformative industry internships, fostering student growth.}
+                \resumeItem{Guidance \& Empowerment: Mentored and supported students for successful internships and career development.}
+                \resumeItem{Administrative Excellence: Orchestrated orientations, evaluations, and database management for seamless internship.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+        \vspace{-30pt}
+        \resumeSubHeadingListStart
+        \resumeSubheading{}{}{Class Representative | B.Tech | REVA University}{Aug 2016 - Aug 2020}
+            \resumeItemListStart
+                \resumeItem{Effectively coordinated activities, Championing student interests for an interactive learning journey.  }
+                \resumeItem{\textbf{Volunteered as an Event Organizer} for Reva Research Conclave (RRC-2018).}
+                \resumeItem{Led as a Team \textbf{Captain} for the football team during my B.Tech.}
+                \\
+                \vspace{3pt}
+                \textbf{Skills:} Communication  · Management  · People skill · Interpersonal Skills · Leadership
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+            \vspace{-19pt}
+        \resumeSubHeadingListStart
+        \resumeSubheading{Achievements/Awards }{}{}{}
+        \vspace{-17pt}
+            \resumeItemListStart
+                \resumeItem{Secured All India Rank of \textbf{2031} in \textbf{GATE 2022} among 120 thousands candidates}
+                \resumeItem{\textbf{Winners} of 24-hour \textbf{Project Challenge 2019} organized by Xcelerator at REVA University Bangalore Division in 2019}
+                \resumeItem{Runner-Up position in the \textbf{Smart India Hackathon Phase-2 Regional Level} Program in 2018.}
+                \resumeItem{\textbf{Winners} in a football tournament, representing the college at the Cluster Level Sports Meet in 2019.}
+                \resumeItem{Recognized with an \textbf{Innovation and Talent Award} from Publicis Sapient for proposing the best solution idea for the Owner Service problem on behalf of the client in 2021.}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+\end{document}

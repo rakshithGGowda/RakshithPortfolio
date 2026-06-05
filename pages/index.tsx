@@ -1,15 +1,8 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import styles from "../styles/Home.module.css";
+import dynamic from "next/dynamic";
+import React, { useRef } from "react";
 import { Experience, PageInfo, Skill, Project, Social } from "../typings";
-import { fetchPageInfo } from "../utils/fetchPageInfo";
-import { fetchExperiences } from "../utils/fetchExperience";
-import { fetchProjects } from "../utils/fetchProjects";
-import { fetchSkills } from "../utils/fetchSkills";
-import { fetchSocials } from "../utils/fetchSocials";
 import About from "../components/About";
 import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
@@ -17,7 +10,16 @@ import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Link from "next/link";
 import { HomeIcon } from "@heroicons/react/24/solid";
-import Script from "next/script";
+import {
+  pageInfoData,
+  experiencesData,
+  skillsData,
+  projectsData,
+  socialsData,
+} from "../data/portfolioData";
+
+const Header = dynamic(() => import("../components/Header"), { ssr: false });
+const Hero = dynamic(() => import("../components/Hero"), { ssr: false });
 
 type Props = {
   pageInfo: PageInfo;
@@ -28,8 +30,11 @@ type Props = {
 };
 
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   return (
     <div
+      ref={scrollRef}
       className="bg-lightBackground text-darkBlack h-screen snap-y snap-mandatory
     overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
     >
@@ -52,21 +57,8 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <title>{"Mitch's Portfolio"}</title>
+        <title>{"Rakshith G | ML Engineer Portfolio"}</title>
       </Head>
-
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-LV1LN9VBT0"
-        strategy="afterInteractive"
-      ></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-           gtag('config', 'G-LV1LN9VBT0')`}
-        ;
-      </Script>
 
       {/* Header */}
       <Header socials={socials} />
@@ -78,7 +70,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 
       {/* About */}
       <section id="about" className="snap-center">
-        <About pageInfo={pageInfo} />
+        <About pageInfo={pageInfo} scrollRef={scrollRef} />
       </section>
 
       {/* Experiences */}
@@ -117,11 +109,11 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const pageInfo = await fetchPageInfo();
-  const experiences = await fetchExperiences();
-  const skills = await fetchSkills();
-  const projects = await fetchProjects();
-  const socials = await fetchSocials();
+  const pageInfo = pageInfoData as any;
+  const experiences = experiencesData as any;
+  const skills = skillsData as any;
+  const projects = projectsData as any;
+  const socials = socialsData as any;
 
   return {
     props: {
@@ -131,6 +123,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials,
     },
-    revalidate: 10,
   };
 };

@@ -23,15 +23,29 @@ export default function Projects({ projects }: Props) {
             key={project._id}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-10 md:p-44 h-screen"
           >
-            <motion.img
-              initial={{ y: -100, opacity: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2 }}
-              viewport={{ once: true }}
-              className=" h-28 xl:h-80 md:h-72 object-contain"
-              src={urlFor(project?.image).url()}
-              alt=""
-            />
+            {project?.image ? (
+              <motion.img
+                initial={{ y: -100, opacity: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2 }}
+                viewport={{ once: true }}
+                className=" h-28 xl:h-80 md:h-72 object-contain"
+                src={urlFor(project?.image).url()}
+                alt=""
+              />
+            ) : (
+              <motion.div
+                initial={{ y: -100, opacity: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2 }}
+                viewport={{ once: true }}
+                className="h-28 xl:h-56 md:h-44 w-full max-w-md bg-darkGreen/10 rounded-xl flex items-center justify-center"
+              >
+                <span className="text-2xl md:text-4xl font-bold text-darkGreen/60">
+                  🚀 Project {i + 1}
+                </span>
+              </motion.div>
+            )}
 
             <div className="space-y-5 md:space-y-10 px-0 md:px-10 max-w-6xl">
               <h4 className="text-lg md:text-2xl lg:text-4xl font-semibold text-center">
@@ -42,12 +56,23 @@ export default function Projects({ projects }: Props) {
               </h4>
               <div className="flex items-center space-x-2 justify-center ">
                 {project?.technologies.map((technology) => (
-                  <img
-                    key={technology._id}
-                    className="h-10 w-10 rounded-full object-cover"
-                    src={urlFor(technology?.image).url()}
-                    alt=""
-                  />
+                  technology?.image ? (
+                    <img
+                      key={technology._id}
+                      className="h-10 w-10 rounded-full object-cover"
+                      src={typeof technology.image === "string" ? technology.image : urlFor(technology.image).url()}
+                      alt=""
+                    />
+                  ) : (
+                    <div
+                      key={technology._id}
+                      className="h-10 w-10 rounded-full bg-darkGreen/20 flex items-center justify-center"
+                    >
+                      <span className="text-xs font-semibold text-darkGreen">
+                        {technology?.title?.substring(0, 3)}
+                      </span>
+                    </div>
+                  )
                 ))}
               </div>
 
