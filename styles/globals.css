@@ -2,12 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: linear-gradient(135deg, #f0f4f3 0%, #e8f0ee 50%, #f0f4f3 100%);
+  }
+  ::selection {
+    background: rgba(44, 105, 117, 0.3);
+    color: #2C6975;
+  }
+}
+
 @layer components {
   .heroButton {
-    @apply px-3 md:px-6 py-2 border border-lightBackground rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-darkGreen/40 hover:text-darkGreen/40;
+    @apply px-4 md:px-6 py-2 border border-gray-300 rounded-full uppercase text-xs tracking-widest text-gray-500
+    transition-all duration-300
+    hover:border-darkGreen hover:text-darkGreen hover:bg-darkGreen/5 hover:shadow-lg hover:shadow-darkGreen/10 hover:scale-105
+    active:scale-95;
   }
 
   .contactInput {
-    @apply outline-none bg-slate-400/20 rounded-lg border-b-2 px-6 py-3 md:py-4  text-gray-500 placeholder-gray-500 transition-all focus:border-darkGreen/20 focus:text-darkGreen/80 hover:border-darkGreen/20;
+    @apply outline-none bg-white/60 backdrop-blur-sm rounded-xl border border-gray-200 px-6 py-3 md:py-4
+    text-gray-600 placeholder-gray-400
+    transition-all duration-300
+    focus:border-darkGreen/40 focus:text-darkGreen/80 focus:ring-2 focus:ring-darkGreen/10 focus:shadow-lg focus:shadow-darkGreen/5
+    hover:border-darkGreen/30 hover:shadow-md;
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+  }
+
+  .glass-dark {
+    @apply bg-white/80 backdrop-blur-xl border border-white/30 shadow-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-darkGreen via-lightGreen to-darkGreen bg-300% animate-gradient-x;
+  }
+
+  .section-heading {
+    @apply uppercase tracking-[20px] text-gray-400 text-xl md:text-2xl font-light;
+  }
+
+  .glow-ring {
+    box-shadow: 0 0 30px rgba(44,105,117,0.2), 0 0 60px rgba(104,178,160,0.1);
   }
 }

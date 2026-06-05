@@ -10,7 +10,8 @@ type Props = {
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center
+      bg-white/40 backdrop-blur-lg border-b border-white/20">
       <motion.div
         initial={{
           x: -500,
@@ -25,15 +26,17 @@ export default function Header({ socials }: Props) {
         transition={{
           duration: 1.5,
         }}
-        className=" flex flex-row items-center"
+        className="flex flex-row items-center gap-1"
       >
         {/* React social icons */}
         {socials.map((social) => (
           <SocialIcon
             key={social._id}
             url={social.url}
-            fgColor="gray"
+            fgColor="#2C6975"
             bgColor="transparent"
+            style={{ height: 40, width: 40 }}
+            className="hover:scale-110 transition-transform duration-200"
           />
         ))}
       </motion.div>
@@ -53,15 +56,16 @@ export default function Header({ socials }: Props) {
           transition={{
             duration: 1.5,
           }}
-          className="flex flex-row items-center text-gray-300 cursor-pointer"
+          className="flex flex-row items-center cursor-pointer group"
         >
           <SocialIcon
             className="cursor-pointer"
             network="email"
-            fgColor="grey"
+            fgColor="#2C6975"
             bgColor="transparent"
+            style={{ height: 40, width: 40 }}
           />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+          <p className="uppercase hidden md:inline-flex text-sm text-gray-400 group-hover:text-darkGreen transition-colors duration-300 tracking-wider">
             Get in touch
           </p>
         </motion.div>

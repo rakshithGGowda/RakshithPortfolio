@@ -96,8 +96,12 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <div className="h-10 w-10 bg-darkGreen/80 rounded-full flex items-center justify-center">
-              <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-white animate-pulse" />
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-darkGreen to-lightGreen rounded-full blur opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
+              <div className="relative h-10 w-10 bg-gradient-to-r from-darkGreen to-lightGreen rounded-full flex items-center justify-center shadow-lg
+                hover:scale-110 hover:shadow-xl transition-all duration-300">
+                <HomeIcon className="h-5 w-5 text-white" />
+              </div>
             </div>
           </div>
         </footer>
