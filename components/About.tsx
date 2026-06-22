@@ -57,6 +57,7 @@ export default function About({ pageInfo, scrollRef }: Props) {
           <img
             className="relative w-52 h-52 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px] border-2 border-white/50 shadow-2xl"
             src={typeof pageInfo.profilePic === "string" ? pageInfo.profilePic : urlFor(pageInfo.profilePic).url()}
+            alt={pageInfo?.name || "Profile"}
           />
         </motion.div>
       ) : (

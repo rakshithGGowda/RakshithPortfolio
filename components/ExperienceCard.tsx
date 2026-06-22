@@ -27,7 +27,7 @@ export default function ExperienceCard({ experience }: Props) {
             <img
               className="relative w-28 h-28 rounded-full xl:w-[140px] xl:h-[140px] object-cover object-center border-2 border-white shadow-lg"
               src={typeof experience.companyImage === "string" ? experience.companyImage : urlFor(experience.companyImage).url()}
-              alt=""
+              alt={experience?.company || "Company logo"}
             />
           </div>
         </motion.div>
@@ -89,7 +89,7 @@ export default function ExperienceCard({ experience }: Props) {
               <img
                 className="rounded-full object-cover object-center border-2 border-white shadow-lg w-full h-full"
                 src={typeof experience.companyImage === "string" ? experience.companyImage : urlFor(experience.companyImage).url()}
-                alt=""
+                alt={experience?.company || "Company logo"}
               />
             </div>
           ) : (
