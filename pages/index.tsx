@@ -19,7 +19,10 @@ import {
 } from "../data/portfolioData";
 
 const Header = dynamic(() => import("../components/Header"), { ssr: false });
-const Hero = dynamic(() => import("../components/Hero"), { ssr: false });
+const Hero = dynamic(() => import("../components/Hero"), {
+  ssr: false,
+  loading: () => <div className="h-screen" />,
+});
 
 type Props = {
   pageInfo: PageInfo;
@@ -64,7 +67,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       <Header socials={socials} />
 
       {/* Hero */}
-      <section id="hero" className="snap-start">
+      <section id="hero" className="snap-start h-screen">
         <Hero pageInfo={pageInfo} />
       </section>
 
